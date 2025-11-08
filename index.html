@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suscri - Creá tu club de beneficios</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&family=Roboto:wght@300;400;600;700&family=Zen+Maru+Gothic:wght@900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER / NAVEGACIÓN -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg class="logo-icon" width="30" height="29" viewBox="0 0 30 29" fill="none">
+                        <circle cx="15" cy="14.5" r="14" fill="#B0CD42"/>
+                        <path d="M15 8L18 14H12L15 8Z" fill="white"/>
+                    </svg>
+                    <span class="logo-text">suscri</span>
+                </div>
+                <button class="btn-primary" id="btn-header-create">Creá tu club de beneficios</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">COMENZÁ GRATIS</span>
+                <h1 class="hero-title">
+                    Creá un club de beneficios<br>
+                    para tu negocio
+                </h1>
+                <p class="hero-description">
+                    Fidelizá a tus clientes con descuentos y tarjetas digitales para acumular beneficios. Gestioná todo con Suscri.
+                </p>
+                <button class="btn-cta" id="btn-hero-create">Creá tu club</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFICIOS CARDS SECTION -->
+    <section class="benefits-cards">
+        <div class="container">
+            <div class="cards-grid">
+                <!-- Card 1: Sistema de sellos -->
+                <div class="benefit-card card-rotate-left">
+                    <div class="card-image">
+                        <div class="stamps-grid">
+                            <div class="stamp filled"></div>
+                            <div class="stamp filled"></div>
+                            <div class="stamp filled"></div>
+                            <div class="stamp filled"></div>
+                            <div class="stamp filled"></div>
+                            <div class="stamp filled"></div>
+                            <div class="stamp filled"></div>
+                            <div class="stamp filled"></div>
+                            <div class="stamp"></div>
+                        </div>
+                        <div class="card-decoration">
+                            <div class="decoration-stars"></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Sistema de sellos.</h3>
+                        <p class="card-description">
+                            Tus clientes <strong>obtienen puntos por cada compra</strong>, al llegar a una cantidad de puntos, pueden canjear por un beneficio.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Descuentos -->
+                <div class="benefit-card card-rotate-right">
+                    <div class="card-image">
+                        <div class="discount-badges">
+                            <span class="discount-badge">10%</span>
+                            <span class="discount-badge">15%</span>
+                            <span class="discount-badge">20%</span>
+                            <span class="discount-badge">25%</span>
+                            <span class="discount-badge">30%</span>
+                            <span class="discount-badge">40%</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Descuento para socios.</h3>
+                        <p class="card-description">
+                            Tus clientes <strong>obtienen un % o valor de descuento</strong> en sus compras por ser miembros del club.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Preview (placeholder) -->
+                <div class="benefit-card card-placeholder">
+                    <div class="card-image">
+                        <div class="placeholder-content"></div>
+                    </div>
+                    <div class="card-content">
+                        <div class="skeleton-line"></div>
+                        <div class="skeleton-line short"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phone Mockup -->
+            <div class="phone-mockup">
+                <img src="https://www.figma.com/api/mcp/asset/c8e2b1ff-4b9a-4f6a-96b2-7ced333fb096" alt="App móvil de Suscri" class="phone-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURE SECTION 1: Crear web app -->
+    <section class="feature-section dark">
+        <div class="container">
+            <div class="feature-content">
+                <div class="feature-text">
+                    <span class="feature-label">¿Qué ofrecemos?</span>
+                    <h2 class="feature-title">Creá una web app para tu club beneficios en 5 minutos.</h2>
+                    <p class="feature-description">
+                        Nuestra plataforma te permite crearlo de forma simple y rápida. Gestioná tu club con Suscri.
+                    </p>
+                </div>
+                <div class="feature-visual">
+                    <div class="dashboard-preview">
+                        <!-- Dashboard mockup simplificado -->
+                        <div class="dashboard-header">
+                            <div class="dashboard-logo">
+                                <span class="logo-icon-small"></span>
+                                <span class="logo-text-small">suscri</span>
+                            </div>
+                        </div>
+                        <div class="dashboard-content">
+                            <div class="dashboard-form">
+                                <h3>Valida el beneficio de un cliente</h3>
+                                <div class="form-group">
+                                    <label>Ingresá el número documento del cliente*</label>
+                                    <input type="text" placeholder="32.999.000" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label>Elegí la promoción*</label>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" checked readonly>
+                                        <span>Promo.ID</span>
+                                    </div>
+                                </div>
+                                <button class="btn-dashboard">Registrar compra</button>
+                            </div>
+                            <div class="dashboard-history">
+                                <h4>Historial</h4>
+                                <p class="history-subtitle">Puedes ver los ultimos registros de beneficiarios de tu club y cancelar un beneficio si te confundiste.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="decorative-bg"></div>
+    </section>
+
+    <!-- FEATURE SECTION 2: Invitá clientes -->
+    <section class="feature-section light">
+        <div class="container">
+            <div class="feature-content reverse">
+                <div class="feature-visual">
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <div class="phone-header">
+                                <div class="brand-logo">
+                                    <div class="brand-icon"></div>
+                                </div>
+                            </div>
+                            <h2 class="phone-title">Unite a Kat Café</h2>
+                            <p class="phone-subtitle">y obtené beneficios increíbles</p>
+                            <div class="qr-code">
+                                <img src="https://www.figma.com/api/mcp/asset/074c4260-5bc4-4a58-ab0a-9e5719ea50c0" alt="Código QR" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="powered-by">
+                                <span>Powered by</span>
+                                <span class="powered-logo">suscri</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-text">
+                    <span class="feature-label">Invitá a tus clientes</span>
+                    <h2 class="feature-title">Colocá el QR en tu local o compartí el link para que se unan tus seguidores</h2>
+                    <p class="feature-description">
+                        Para tus clientes todo es fácil. Podés compartir el QR en la cartelería o en tu local físico. Y el link de registro por redes sociales o WhatsApp.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURE SECTION 3: Plataforma fácil -->
+    <section class="feature-section dark">
+        <div class="container">
+            <div class="feature-content reverse">
+                <div class="feature-visual">
+                    <div class="dashboard-preview-small">
+                        <div class="dashboard-mini">
+                            <div class="mini-header">
+                                <span class="mini-logo">suscri</span>
+                            </div>
+                            <div class="mini-content">
+                                <div class="mini-form">
+                                    <label>Ingresá el número documento del cliente*</label>
+                                    <input type="text" placeholder="32.999.000" readonly>
+                                    <label>Elegí la promoción*</label>
+                                    <button class="mini-btn">Registrar compra</button>
+                                </div>
+                                <div class="mini-table">
+                                    <div class="table-header">
+                                        <span>Nombre</span>
+                                        <span>Beneficios aplicados</span>
+                                        <span>Fecha</span>
+                                        <span>Acciones</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <div class="table-cell">
+                                            <strong>Nombre</strong>
+                                            <small>DNI: 30.456.789</small>
+                                        </div>
+                                        <div class="table-cell">Tarjeta de café (9º sello)</div>
+                                        <div class="table-cell">02/05/2024</div>
+                                        <div class="table-cell">
+                                            <button class="table-action">⋮</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rotating-badge">COMENZÁ GRATIS</div>
+                </div>
+                <div class="feature-text">
+                    <h2 class="feature-title">Una plataforma fácil y transparente</h2>
+                    <p class="feature-description">
+                        Con Suscri, tenés acceso a un panel completo de gestión de clientes. Podés ver quiénes se sumaron a tu club, cuántas veces compraron, qué beneficios usan y hasta segmentarlos por comportamiento de compra.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="decorative-bg-2"></div>
+    </section>
+
+    <!-- CTA SECTION: Registro -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">¡Creá tu club de beneficios ahora!</h2>
+                
+                <div class="registration-card">
+                    <h3 class="registration-title">Registrate</h3>
+                    
+                    <form class="registration-form" id="registration-form">
+                        <div class="form-field">
+                            <label for="email">Email*</label>
+                            <input type="email" id="email" name="email" placeholder="Ingresa tu email..." required>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit" id="btn-register">Comienza gratis</button>
+                    </form>
+
+                    <div class="divider">
+                        <span class="divider-line"></span>
+                        <span class="divider-text">O</span>
+                        <span class="divider-line"></span>
+                    </div>
+
+                    <button class="btn-google" id="btn-google-login">
+                        <svg class="google-icon" width="20" height="20" viewBox="0 0 20 20">
+                            <path fill="#4285F4" d="M19.6 10.23c0-.82-.1-1.42-.25-2.05H10v3.72h5.5c-.15.96-.74 2.31-2.04 3.22v2.45h3.16c1.89-1.73 2.98-4.3 2.98-7.34z"/>
+                            <path fill="#34A853" d="M13.46 15.13c-.83.59-1.96 1-3.46 1-2.64 0-4.88-1.74-5.68-4.15H1.07v2.52C2.72 17.75 6.09 20 10 20c2.7 0 4.96-.89 6.62-2.42l-3.16-2.45z"/>
+                            <path fill="#FBBC05" d="M3.99 10c0-.69.12-1.35.32-1.97V5.51H1.07A9.973 9.973 0 000 10c0 1.61.39 3.14 1.07 4.49l3.24-2.52c-.2-.62-.32-1.28-.32-1.97z"/>
+                            <path fill="#EA4335" d="M10 3.88c1.88 0 3.13.81 3.85 1.48l2.84-2.76C14.96.99 12.7 0 10 0 6.09 0 2.72 2.25 1.07 5.51l3.24 2.52C5.12 5.62 7.36 3.88 10 3.88z"/>
+                        </svg>
+                        Ingresar con Google
+                    </button>
+
+                    <div class="login-link">
+                        <span>¿Ya tenés una cuenta? <a href="#" id="link-login">Ingresá</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cta-decorative-bg"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <svg class="logo-icon" width="30" height="29" viewBox="0 0 30 29" fill="none">
+                        <circle cx="15" cy="14.5" r="14" fill="#1E272E"/>
+                        <path d="M15 8L18 14H12L15 8Z" fill="#FFD43B"/>
+                    </svg>
+                    <span class="footer-logo-text">suscri</span>
+                </div>
+                <p class="footer-text">La app para crear tu club de beneficios en 5 minutos.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
