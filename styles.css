@@ -2,7 +2,7 @@
    RESET Y VARIABLES
    =================================== */
 
-* {
+   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -86,8 +86,10 @@ body {
 }
 
 .logo-icon {
-    width: 30px;
-    height: 30px;
+    height: 33px;
+    width: auto;
+    object-fit: contain;
+    display: block;
 }
 
 .logo-text {
@@ -196,38 +198,78 @@ body {
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
     gap: 40px;
     max-width: 900px;
     margin: 0 auto 60px;
     position: relative;
+    align-items: center;
 }
 
-.benefit-card {
-    background: white;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.benefit-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+    align-self: center;
 }
 
-.benefit-card:hover {
+.image-top {
+    position: relative;
+    z-index: 2;
+}
+
+.image-left {
+    grid-column: 1;
+}
+
+.image-center {
+    grid-column: 2;
+}
+
+.image-right {
+    grid-column: 3;
+}
+
+.image-bottom {
+    position: absolute;
+    z-index: 1;
+    opacity: 0.7;
+    width: 100%;
+    height: auto;
+}
+
+.image-bottom.image-left {
+    grid-column: 1;
+    grid-row: 1;
+    top: 60px;
+    left: 0;
+}
+
+.image-bottom.image-right {
+    grid-column: 3;
+    grid-row: 1;
+    top: 60px;
+    right: 0;
+}
+
+.benefit-image:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-.card-rotate-left {
+.image-rotate-left {
     transform: rotate(-7deg);
 }
 
-.card-rotate-left:hover {
+.image-rotate-left:hover {
     transform: rotate(-7deg) translateY(-5px);
 }
 
-.card-rotate-right {
+.image-rotate-right {
     transform: rotate(4deg);
 }
 
-.card-rotate-right:hover {
+.image-rotate-right:hover {
     transform: rotate(4deg) translateY(-5px);
 }
 
@@ -236,7 +278,19 @@ body {
     background: linear-gradient(135deg, #FBFFED 0%, #E8F5E9 100%);
     position: relative;
     overflow: hidden;
-    padding: 20px;
+    padding: 0;
+}
+
+.card-full-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dashboard-image {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .stamps-grid {
@@ -247,24 +301,47 @@ body {
 }
 
 .stamp {
-    width: 40px;
-    height: 40px;
+    width: 43px;
+    height: 43px;
     border: 2px solid var(--primary-green);
     border-radius: 50%;
     background: white;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.stamp.filled::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 28px;
-    height: 28px;
+.stamp.filled {
     background: var(--primary-green);
-    border-radius: 50%;
+}
+
+.stamp-icon {
+    width: 30px;
+    height: 21px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+
+.card-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+}
+
+.decoration-star {
+    position: absolute;
+    top: -44px;
+    left: 46px;
+    width: 342px;
+    height: 342px;
+    opacity: 0.3;
+    z-index: 0;
 }
 
 .discount-badges {
@@ -373,6 +450,8 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 .feature-content.reverse {
@@ -385,6 +464,13 @@ body {
 
 .feature-text {
     max-width: 550px;
+    position: relative;
+    z-index: 2;
+}
+
+.feature-visual {
+    position: relative;
+    z-index: 2;
 }
 
 .feature-label {
@@ -417,10 +503,6 @@ body {
 
 .feature-section.dark .feature-description {
     color: #DCE7F1;
-}
-
-.feature-visual {
-    position: relative;
 }
 
 /* Dashboard Preview */
@@ -569,7 +651,7 @@ body {
 .brand-icon {
     width: 50px;
     height: 28px;
-    background: url('https://www.figma.com/api/mcp/asset/6cd0066d-9972-4e88-b9d8-eed44d28a658') center/contain no-repeat;
+    object-fit: contain;
 }
 
 .phone-title {
@@ -711,14 +793,15 @@ body {
     position: absolute;
     top: 20px;
     right: -40px;
-    background: white;
-    color: var(--text-primary);
-    padding: 8px 16px;
-    border-radius: 50%;
-    font-size: 10px;
-    font-weight: 600;
+    width: 92px;
+    height: 92px;
+    z-index: 10;
+}
+
+.rotating-badge-image {
+    width: 100%;
+    height: 100%;
     animation: rotate 20s linear infinite;
-    white-space: nowrap;
 }
 
 @keyframes rotate {
@@ -741,13 +824,40 @@ body {
 .decorative-bg::before {
     content: '';
     position: absolute;
-    left: -150px;
+    left: -151px;
     top: 56px;
     width: 982px;
     height: 1037px;
-    background: url('https://www.figma.com/api/mcp/asset/4cf31e35-4ca6-4451-8502-e3540ff8ca5b') no-repeat;
+    background: url('images/decorative-bg-1.svg') no-repeat;
     background-size: contain;
     opacity: 0.1;
+    z-index: 0;
+}
+
+.decorative-bg-2::before {
+    content: '';
+    position: absolute;
+    left: 808px;
+    top: 428px;
+    width: 1312px;
+    height: 1330px;
+    background: url('images/decorative-bg-2.svg') no-repeat;
+    background-size: contain;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.decorative-bg-2::after {
+    content: '';
+    position: absolute;
+    left: -675px;
+    top: -7px;
+    width: 936px;
+    height: 988px;
+    background: url('images/decorative-bg-3.svg') no-repeat;
+    background-size: contain;
+    opacity: 0.1;
+    z-index: 0;
 }
 
 /* ===================================
@@ -919,7 +1029,7 @@ body {
     position: absolute;
     width: 936px;
     height: 988px;
-    background: url('https://www.figma.com/api/mcp/asset/424186a0-9b15-4196-bde5-7122679f0dcc') no-repeat;
+    background: url('images/decorative-bg-cta.svg') no-repeat;
     background-size: contain;
     opacity: 0.3;
 }
@@ -989,10 +1099,21 @@ body {
         line-height: 30px;
     }
     
+    /* BENEFITS CARDS - ONLY SHOW CENTER IMAGE */
     .cards-grid {
         grid-template-columns: 1fr;
         max-width: 400px;
         gap: 60px;
+    }
+    
+    .benefit-image.image-left,
+    .benefit-image.image-right {
+        display: none !important;
+    }
+    
+    .benefit-image.image-center {
+        transform: none !important;
+        display: block;
     }
     
     .card-rotate-left,
@@ -1000,13 +1121,27 @@ body {
         transform: rotate(0deg);
     }
     
+    /* CENTER CONTENT ON TABLETS */
     .feature-content {
         grid-template-columns: 1fr;
         gap: 40px;
+        text-align: center;
     }
     
     .feature-content.reverse {
         direction: ltr;
+    }
+    
+    /* Center images */
+    .dashboard-image {
+        margin: 0 auto;
+        display: block;
+    }
+    
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     
     .phone-mockup {
@@ -1031,6 +1166,21 @@ body {
         padding: 0 20px;
     }
     
+    /* HEADER - SMALLER BUTTON */
+    .header-content {
+        height: auto;
+        padding: 12px 0;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .btn-primary {
+        font-size: 12px;
+        padding: 8px 12px;
+        width: auto;
+        min-width: auto;
+    }
+    
     .hero {
         padding: 60px 0 40px;
     }
@@ -1049,8 +1199,42 @@ body {
         padding: 40px 0 80px;
     }
     
+    /* BENEFITS CARDS - ONLY SHOW CENTER IMAGE ON MOBILE */
+    .cards-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        gap: 20px;
+        margin: 0 auto;
+    }
+    
+    .benefit-image.image-left,
+    .benefit-image.image-right {
+        display: none !important;
+    }
+    
+    .benefit-image.image-center {
+        transform: none !important;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .image-rotate-left,
+    .image-rotate-right {
+        transform: none !important;
+    }
+    
+    /* FEATURE SECTIONS - CENTER ALL CONTENT */
     .feature-section {
         padding: 80px 0;
+    }
+    
+    .feature-content {
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .feature-content.reverse {
+        flex-direction: column;
     }
     
     .feature-title {
@@ -1058,6 +1242,52 @@ body {
         line-height: 36px;
     }
     
+    .feature-description {
+        font-size: 16px;
+    }
+    
+    /* CENTER KATCAFE IMAGE AND ALL IMAGES */
+    .image-container {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin: 0 auto;
+    }
+    
+    .dashboard-image {
+        max-width: 100%;
+        height: auto !important;
+        width: auto !important;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    /* Feature Section 3 - Special handling for rotating badge */
+    .feature-visual {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .rotating-badge {
+        position: static !important;
+        margin-bottom: 20px;
+    }
+    
+    .rotating-badge-image {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .dashboard-preview-small {
+        margin-left: 0 !important;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    /* CTA SECTION */
     .cta-section {
         padding: 60px 0 80px;
     }
@@ -1073,6 +1303,12 @@ body {
     
     .phone-image {
         width: 300px;
+    }
+    
+    /* CTA BUTTON FULL WIDTH ON MOBILE */
+    .btn-cta {
+        width: 100%;
+        max-width: 100%;
     }
 }
 

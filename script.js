@@ -285,6 +285,33 @@ function initializeParallax() {
 }
 
 // ===================================
+// IMAGE LOADER
+// ===================================
+
+/**
+ * Configuración de la carpeta de imágenes
+ * Cambia esta ruta si tus imágenes están en otra ubicación
+ */
+const IMAGES_FOLDER = 'images/';
+
+/**
+ * Inicializa todas las imágenes usando el atributo data-image
+ * Solo necesitas especificar el nombre del archivo en data-image="nombre.png"
+ */
+function initializeImages() {
+    const images = document.querySelectorAll('img[data-image]');
+    
+    images.forEach(img => {
+        const imageName = img.getAttribute('data-image');
+        if (imageName) {
+            img.src = IMAGES_FOLDER + imageName;
+        }
+    });
+    
+    console.log(`✓ ${images.length} imágenes inicializadas desde ${IMAGES_FOLDER}`);
+}
+
+// ===================================
 // INICIALIZACIÓN
 // ===================================
 
@@ -293,6 +320,9 @@ function initializeParallax() {
  */
 function init() {
     console.log('Inicializando landing page de Suscri...');
+    
+    // Inicializar imágenes primero
+    initializeImages();
     
     // Inicializar event listeners
     initializeEventListeners();
