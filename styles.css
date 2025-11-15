@@ -39,7 +39,7 @@
     --spacing-xl: 40px;
     --spacing-2xl: 60px;
     
-    /* Tipografía */
+    /* TipografÃ­a */
     --font-primary: 'Inter', sans-serif;
     --font-secondary: 'Roboto', sans-serif;
     --font-logo: 'Zen Maru Gothic', sans-serif;
@@ -169,20 +169,20 @@ body {
     background-color: var(--primary-yellow);
     color: var(--text-primary);
     border: none;
-    padding: 8px 20px;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 400;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    min-width: 240px;
-    height: 40px;
+    min-width: 280px;
+    height: 56px;
 }
 
 .btn-cta:hover {
     background-color: #FCC419;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 212, 59, 0.4);
+    box-shadow: 0 8px 20px rgba(255, 212, 59, 0.5);
 }
 
 /* ===================================
@@ -1350,4 +1350,78 @@ body {
     .phone-image {
         width: 250px;
     }
+}
+
+/* ===================================
+   FIX PARA ESTILOS DE ENLACES COMO BOTONES - CRÃTICO
+   ================================== */
+
+/* 
+   IMPORTANTE: Estos estilos DEBEN ir al final del CSS
+   para que tengan mÃ¡xima prioridad
+*/
+
+a.btn-primary,
+a.btn-cta {
+    /* Remover TODOS los estilos de enlace */
+    text-decoration: none !important;
+    color: var(--text-primary) !important;
+    
+    /* Asegurar comportamiento de botÃ³n */
+    display: inline-block !important;
+    text-align: center !important;
+    cursor: pointer !important;
+}
+
+/* Aplicar a TODOS los estados posibles */
+a.btn-primary:link,
+a.btn-primary:visited,
+a.btn-primary:hover,
+a.btn-primary:active,
+a.btn-primary:focus {
+    text-decoration: none !important;
+    color: var(--text-primary) !important;
+}
+
+a.btn-cta:link,
+a.btn-cta:visited,
+a.btn-cta:hover,
+a.btn-cta:active,
+a.btn-cta:focus {
+    text-decoration: none !important;
+    color: var(--text-primary) !important;
+}
+
+/* Mantener los efectos hover del botÃ³n */
+a.btn-cta:hover {
+    background-color: #FCC419 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(255, 212, 59, 0.5) !important;
+}
+
+a.btn-primary:hover {
+    background-color: #FCC419 !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Fix para enlaces como botones */
+a.btn-primary,
+a.btn-cta {
+    display: inline-block;
+    text-decoration: none;
+}
+.login-link-header {
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.login-link-header:hover,
+.login-link-header:visited,
+.login-link-header:active,
+.login-link-header:focus {
+    color: #000000;
+    text-decoration: none;
 }

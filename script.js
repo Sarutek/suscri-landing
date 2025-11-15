@@ -68,13 +68,12 @@ function isValidEmail(email) {
 
 /**
  * Función para redirigir a la página de creación de club
- * Los programadores deben implementar el destino correcto
+ * NOTA: Esta función ya no es necesaria porque los botones
+ * ahora son enlaces <a> con href="https://app.suscri.com.ar/register"
  */
 function redirectToCreateClub() {
     console.log('Redirigiendo a crear club...');
-    // TODO: Implementar la redirección correcta
-    // window.location.href = '/crear-club';
-    showNotification('Funcionalidad de creación de club - Por implementar', 'info');
+    window.location.href = 'https://app.suscri.com.ar/register';
 }
 
 /**
@@ -96,7 +95,13 @@ function redirectToLogin() {
  * Inicializa todos los event listeners cuando el DOM está listo
  */
 function initializeEventListeners() {
-    // Botones de "Crear club" en header y hero
+    // NOTA: Los botones de "Crear club" ahora son enlaces <a> con href
+    // Por lo tanto, no necesitan event listeners de JavaScript
+    // El navegador maneja la navegación automáticamente
+    
+    // Los siguientes event listeners están deshabilitados porque
+    // los botones ahora son <a href="https://app.suscri.com.ar/register">
+    /*
     const btnHeaderCreate = document.getElementById('btn-header-create');
     const btnHeroCreate = document.getElementById('btn-hero-create');
     
@@ -108,11 +113,11 @@ function initializeEventListeners() {
         btnHeroCreate.addEventListener('click', redirectToCreateClub);
     }
 
-    // Botón CTA final "Comenzá gratis"
     const btnCtaFinal = document.getElementById('btn-cta-final');
     if (btnCtaFinal) {
         btnCtaFinal.addEventListener('click', redirectToCreateClub);
     }
+    */
 
     // Smooth scroll para navegación interna (si se agregan anclas)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -261,10 +266,11 @@ window.SuscriLanding = {
 /*
 INSTRUCCIONES PARA IMPLEMENTACIÓN:
 
-1. CREAR CLUB:
-   - Funciones: redirectToCreateClub()
-   - Botones: #btn-header-create, #btn-hero-create, #btn-cta-final
-   - Actualizar la URL de destino en la función
+✅ CREAR CLUB - IMPLEMENTADO:
+   - Los botones ahora son enlaces <a> con href="https://app.suscri.com.ar/register"
+   - La navegación funciona automáticamente sin JavaScript
+   - Botones: #btn-header-create, #btn-hero-create
+   - No se requiere JavaScript adicional para estos enlaces
 
 2. LOGIN:
    - Función: redirectToLogin()
@@ -289,3 +295,9 @@ INSTRUCCIONES PARA IMPLEMENTACIÓN:
    - Verificar que todos los IDs coincidan con el HTML
    - Testear flujos de error y success
 */
+
+
+
+
+
+
