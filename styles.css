@@ -1213,7 +1213,10 @@ body {
         align-items: center !important;
     }
     
-
+    .benefit-image.image-left,
+    .benefit-image.image-right {
+        display: none !important;
+    }
     
     .benefit-image.image-center {
         transform: none !important;
@@ -1372,6 +1375,11 @@ body {
         align-items: center !important;
     }
     
+    .benefit-image.image-left,
+    .benefit-image.image-right {
+        display: none !important;
+    }
+
     .benefit-image.image-center {
         transform: none !important;
         display: block !important;
@@ -1515,6 +1523,11 @@ body {
     
     .phone-image {
         width: 250px;
+    }
+    
+    .benefit-image.image-left,
+    .benefit-image.image-right {
+        display: none !important;
     }
 }
 
