@@ -196,7 +196,7 @@ function initializeParallax() {
  * Configuración de la carpeta de imágenes
  * Cambia esta ruta si tus imágenes están en otra ubicación
  */
-const IMAGES_FOLDER = 'images/';
+const IMAGES_FOLDER = 'assets/';
 
 /**
  * Inicializa todas las imágenes usando el atributo data-image

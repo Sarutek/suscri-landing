@@ -828,7 +828,7 @@ body {
     top: 56px;
     width: 982px;
     height: 1037px;
-    background: url('images/decorative-bg-1.svg') no-repeat;
+    background: url('assets/decorative-bg-1.svg') no-repeat;
     background-size: contain;
     opacity: 0.1;
     z-index: 0;
@@ -841,7 +841,7 @@ body {
     top: 428px;
     width: 1312px;
     height: 1330px;
-    background: url('images/decorative-bg-2.svg') no-repeat;
+    background: url('assets/decorative-bg-2.svg') no-repeat;
     background-size: contain;
     opacity: 0.1;
     z-index: 0;
@@ -854,7 +854,7 @@ body {
     top: -7px;
     width: 936px;
     height: 988px;
-    background: url('images/decorative-bg-3.svg') no-repeat;
+    background: url('assets/decorative-bg-3.svg') no-repeat;
     background-size: contain;
     opacity: 0.1;
     z-index: 0;
@@ -1029,7 +1029,7 @@ body {
     position: absolute;
     width: 936px;
     height: 988px;
-    background: url('images/decorative-bg-cta.svg') no-repeat;
+    background: url('assets/decorative-bg-cta.svg') no-repeat;
     background-size: contain;
     opacity: 0.3;
 }
